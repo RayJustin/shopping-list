@@ -46,6 +46,7 @@ app.use(express.static('public'));
 
 app.get('/items', function(req, res){
 	res.json(storage.items);
+	
 });
 
 app.post('/items', jsonParser, function(req, res){
@@ -76,3 +77,5 @@ app.listen(process.env.PORT || 8080, function(){
 	console.log("Server Started at: http://localhost:8080");
 });
 
+exports.app = app;
+exports.storage = storage;
